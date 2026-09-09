@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro – Neiyan Eusse</title>
+  <style>
+    body{font-family:sistema,sans-serif;max-width:600px;margin:auto;padding:1rem}
+    label{display:block;margin-top:1rem}
+    input,select,textarea{width:100%;padding:.5rem;margin-top:.3rem}
+    button{margin-top:1rem;padding:.7rem 1.2rem}
+  </style>
+</head>
+<body>
+
+<h2>Formulario de Registro Universitario</h2>
+
+<form action="/registrar" method="POST">
+
+  <label for="nombre">Nombre completo:</label>
+  <input type="text" id="nombre" name="nombre" required
+         minlength="3" maxlength="100"
+         placeholder="Ej: Neiyan Esteeward Eusse Mayorga">
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required
+         pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+         title="Por favor ingresa un email válido">
+
+  <label for="telefono">Teléfono:</label>
+  <input type="tel" id="telefono" name="telefono"
+         aria-describedby="tel-opcional">
+  <p id="tel-opcional">(Opcional) Número de contacto.</p>
+
+  <label for="fecha-nacimiento">Fecha de nacimiento:</label>
+  <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+
+  <label for="password">Contraseña:</label>
+  <input type="password" id="password" name="password" required
+         minlength="8" maxlength="16"
+         pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$"
+         title="Mínimo 8 caracteres, debe contener letras y números">
+
+  <label for="sitio-web">Sitio web:</label>
+  <input type="url" id="sitio-web" name="sitio-web"
+         placeholder="https://">
+
+  <label for="notas">Notas:</label>
+  <textarea id="notas" name="notas" rows="3"
+            placeholder="Escribe aquí tus observaciones"></textarea>
+
+  <label for="semestre">Semestre:</label>
+  <input type="number" id="semestre" name="semestre" min="1" max="10"
+         required>
+
+  <label for="jornada">Jornada:</label>
+  <select id="jornada" name="jornada" required>
+    <option value="matutina">Matutina</option>
+    <option value="vespertina">Vespertina</option>
+    <option value="nocturna">Nocturna</option>
+  </select>
+
+  <label for="area-enfasis">Área de énfasis (1‑5):</label>
+  <input type="range" id="area-enfasis" name="area-enfasis"
+         min="1" max="5" step="1">
+
+  <label for="color-favorito">Color favorito:</label>
+  <input type="color" id="color-favorito" name="color-favorito"
+         value="#0000FF">
+
+  <p>Género de interés:</p>
+  <input type="radio" id="frontend" name="genero" value="Frontend">
+  <label for="frontend">Frontend</label><br>
+  <input type="radio" id="backend" name="genero" value="Backend">
+  <label for="backend">Backend</label><br>
+  <input type="radio" id="fullstack" name="genero" value="Fullstack">
+  <label for="fullstack">Fullstack</label>
+
+  <label for="lenguaje">Lenguaje preferido:</label>
+  <select id="lenguaje" name="lenguaje">
+    <option value="javascript">JavaScript</option>
+    <option value="python">Python</option>
+    <option value="java">Java</option>
+    <option value="csharp">C#</option>
+  </select>
+
+  <label for="archivo">Portafolio (archivo):</label>
+  <input type="file" id="archivo" name="archivo"
+         accept=".zip,.rar">
+
+  <input type="hidden" name="id-estudiante"
+         value="neiyan-eusse-2024">
+
+  <button type="submit">Registrarse</button>
+
+</form>
+
+</body>
+</html>
